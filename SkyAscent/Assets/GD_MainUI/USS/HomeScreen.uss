@@ -1,0 +1,65 @@
+.home__screen {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.home-screen__background {
+    background-image: url("project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Textures/Fruit%20Jelly%20(B&W).jpg?fileID=2800000&guid=1cdc5b506b1a4a33a53c30669ced1f51&type=3#Fruit Jelly (B&W)");
+    background-color: rgb(255, 255, 255);
+}
+
+.milestone-marker {
+    -unity-font-definition: url("project://database/Assets/Game%20Fonts/Goldman-Regular.ttf?fileID=12800000&guid=80549297a639ca54f8db05b155b82468&type=3#Goldman-Regular");
+    -unity-font-style: bold;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    transform-origin: center 20px;
+}
+
+.buttton__feature {
+    width: 25%;
+    height: 70%;
+}
+
+.progress-root {
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.level-text {
+    color: white;
+    -unity-font-style: bold;
+    font-size: 18px;
+    width: 20px;
+    -unity-text-align: middle-center;
+}
+
+.tick-mark {
+    height: 10px;
+    align-items: flex-end;
+}
+
+.bar-background {
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.bar-fill {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(0, 188, 212);
+    border-radius: 2px;
+}
+
+.ticks-row {
+    height: 10px; /* Chiều cao của phần vạch nhô lên khỏi bar */
+    align-items: flex-end; /* Đẩy vạch kẻ xuống đáy container để chạm bar */
+}

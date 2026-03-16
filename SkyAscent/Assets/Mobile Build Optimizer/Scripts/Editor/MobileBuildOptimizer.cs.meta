@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b4bd91a4ce00f3d44ad5a3f819417ecd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 310459
+  packageName: Mobile Build Optimizer | Optimize build in 2 clicks
+  packageVersion: 1.0
+  assetPath: Assets/Mobile Build Optimizer/Scripts/Editor/MobileBuildOptimizer.cs
+  uploadId: 799740

@@ -1,0 +1,8 @@
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/CMakeFiles/edit_cache.dir
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/CMakeFiles/rebuild_cache.dir
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/GameActivity/CMakeFiles/game.dir
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/GameActivity/CMakeFiles/edit_cache.dir
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/GameActivity/CMakeFiles/rebuild_cache.dir
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/FramePacing/CMakeFiles/swappywrapper.dir
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/FramePacing/CMakeFiles/edit_cache.dir
+E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/.utmp/Debug/1h3e2oy3/x86_64/FramePacing/CMakeFiles/rebuild_cache.dir

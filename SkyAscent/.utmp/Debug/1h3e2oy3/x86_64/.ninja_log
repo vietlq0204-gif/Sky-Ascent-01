@@ -1,0 +1,23 @@
+# ninja log v5
+70	174	7947451790947173	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	74a8fced5f3aa67f
+9	16464	7947451953777883	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	379b89a33a1c2ee
+0	16331	7947451952466083	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	ad30ed7f29484f07
+175	305	7947451792229766	E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/1h3e2oy3/obj/x86_64/libswappywrapper.so	ec76d7894a627f12
+25	16321	7947451952348802	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5bc9bd5d95df7d92
+15	16356	7947451952708890	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	29aa1843a24acf2b
+60	16330	7947451952466083	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	62f03258abeb96a1
+33	16333	7947451952491469	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	5d4e17b643fc95d7
+41	16440	7947451953543201	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	cc2e93c66b54342c
+51	16660	7947451955757816	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9b2a10d41825e93a
+16660	16754	7947451956689285	E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/1h3e2oy3/obj/x86_64/libgame.so	ee4590dfd3c71f93
+147	1263	7953004266713379	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	74a8fced5f3aa67f
+1265	2608	7953004284658908	E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/1h3e2oy3/obj/x86_64/libswappywrapper.so	ec76d7894a627f12
+20	4357	7953004288654168	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	5d4e17b643fc95d7
+42	4373	7953004288981675	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	62f03258abeb96a1
+136	4376	7953004303754160	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9b2a10d41825e93a
+94	4380	7953004303774355	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	5bc9bd5d95df7d92
+34	4387	7953004303804438	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	cc2e93c66b54342c
+5	4390	7953004303744204	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	29aa1843a24acf2b
+26	4392	7953004303789396	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	379b89a33a1c2ee
+13	4394	7953004303733766	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	ad30ed7f29484f07
+4394	4543	7953004305374611	E:/ProjectUnity/MainProject/MyMain/SkyAscent/SkyAscent/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/1h3e2oy3/obj/x86_64/libgame.so	ee4590dfd3c71f93

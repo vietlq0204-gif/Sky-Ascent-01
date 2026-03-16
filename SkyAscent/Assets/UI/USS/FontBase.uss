@@ -1,0 +1,42 @@
+.textArea {
+    white-space: normal;
+    flex-wrap: wrap;
+    color: white;
+    padding: 6px;
+    -unity-text-align: middle-center
+}
+
+.TextBase {
+    -unity-font-definition: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/Skin_Assets/font/zekton%20free.ttf?fileID=12800000&guid=8297a2bf97dbbba468bd2518d003a876&type=3#zekton free");
+    color: rgb(255, 255, 255);
+}
+
+.TextBase #unity-text-input {
+    -unity-font-definition: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/Skin_Assets/font/zekton%20free.ttf?fileID=12800000&guid=8297a2bf97dbbba468bd2518d003a876&type=3#zekton free");
+    color: rgba(255, 255, 255, 0.47);
+}
+
+.font60 {
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    font-size: 60px;
+}
+
+.font50 {
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    font-size: 50px;
+}
+
+.font40 {
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    font-size: 40px;
+}
+
+.font30 {
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    font-size: 30px;
+    display: flex;
+}

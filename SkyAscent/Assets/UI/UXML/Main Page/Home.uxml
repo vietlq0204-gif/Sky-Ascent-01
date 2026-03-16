@@ -1,0 +1,179 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Title" src="project://database/Assets/UI/UXML/Sub%20Page/Title.uxml?fileID=9197481963319205126&amp;guid=80a1f550e29966149903974b5afb03ff&amp;type=3#Title" />
+    <ui:Template name="TextField" src="project://database/Assets/UI/UXML/Sub%20Page/TextField.uxml?fileID=9197481963319205126&amp;guid=99c5459cef19fca46828711ea04ed719&amp;type=3#TextField" />
+    <ui:Template name="Description" src="project://database/Assets/UI/UXML/Sub%20Page/Description.uxml?fileID=9197481963319205126&amp;guid=f9602ba6500da374a93e673edc2379d7&amp;type=3#Description" />
+    <ui:Template name="Tab_Image" src="project://database/Assets/UI/UXML/Sub%20Page/Tab_Image.uxml?fileID=9197481963319205126&amp;guid=906b12e66c22ac748bbf13cec0f997f0&amp;type=3#Tab_Image" />
+    <ui:Template name="Tab_A1" src="project://database/Assets/UI/UXML/Sub%20Page/Tab_A1.uxml?fileID=9197481963319205126&amp;guid=9c5e2ec9ba424134bb0fb40cd2d577c2&amp;type=3#Tab_A1" />
+    <Style src="project://database/Assets/UI/USS/PageHome.uss?fileID=7433441132597879392&amp;guid=a7c0de096e5ca1f4caa384e814b0e37d&amp;type=3#PageHome" />
+    <Style src="project://database/Assets/UI/USS/LayoutGroupBase.uss?fileID=7433441132597879392&amp;guid=61b74124914a7774cb1aca52b178edf6&amp;type=3#LayoutGroupBase" />
+    <Style src="project://database/Assets/UI/USS/BackGroundBase.uss?fileID=7433441132597879392&amp;guid=61c0a78c9fbdf2742b645d9d1b9deb7b&amp;type=3#BackGroundBase" />
+    <Style src="project://database/Assets/UI/USS/AlignBase.uss?fileID=7433441132597879392&amp;guid=0dcdc106edd5d3d4db5d3547ad632507&amp;type=3#AlignBase" />
+    <Style src="project://database/Assets/UI/USS/InputFieldBase.uss?fileID=7433441132597879392&amp;guid=8a61a41d7a424674fb815572c4b8ad65&amp;type=3#InputFieldBase" />
+    <Style src="project://database/Assets/UI/USS/SpacingBase.uss?fileID=7433441132597879392&amp;guid=c0f58fa8d3e2c6843a558512b541a3cc&amp;type=3#SpacingBase" />
+    <Style src="project://database/Assets/UI/USS/FontBase.uss?fileID=7433441132597879392&amp;guid=39d0a5d0260184e42b711400a3e6a7ac&amp;type=3#FontBase" />
+    <Style src="project://database/Assets/UI/USS/LabelBase.uss?fileID=7433441132597879392&amp;guid=d4e39278ac67b3342b7d8e7be43141b6&amp;type=3#LabelBase" />
+    <Style src="project://database/Assets/UI/USS/BaseBody.uss?fileID=7433441132597879392&amp;guid=e30c8d84c2d9a644f91407b7017e5c8c&amp;type=3#BaseBody" />
+    <Style src="project://database/Assets/UI/USS/ShapeBase.uss?fileID=7433441132597879392&amp;guid=d792493eb4b4ec040a9f14bedb5da1bf&amp;type=3#ShapeBase" />
+    <Style src="project://database/Assets/UI/USS/ButtonBase.uss?fileID=7433441132597879392&amp;guid=4dc53bb3b74bcdd43aabfbe5d1ff91ca&amp;type=3#ButtonBase" />
+    <ui:VisualElement name="Page_Home" class="page_Base" style="display: flex;">
+        <ui:VisualElement name="Container" style="width: 100%; height: 100%;">
+            <ui:VisualElement name="Panel_Info" class="panel_Base zoneFix_top spacing20" style="background-image: none; display: flex;">
+                <ui:VisualElement name="Left" class="zoneFix_left horizontal_left">
+                    <ui:VisualElement name="Left" class="horizontal_child">
+                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=340961377&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_7&quot;);" />
+                        <TextArea name="Value_Coin" focusable="true" text="1" class="TextBase textArea font40" />
+                        <ui:Button name="Tab_Add_Coin" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300012&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#plus&quot;);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Right" class="horizontal_child" style="display: none;">
+                        <ui:VisualElement name="Image_Cristal" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=867521007&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_8&quot;);" />
+                        <TextArea name="Value_Crystal" text="1" focusable="true" class="TextBase textArea font40" />
+                        <ui:Button name="Tab_Add_Cristal" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=-890885736&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_59&quot;);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Right" class="horizontal_child zoneFix_right">
+                    <ui:Button name="Tab_Setting" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=1396336879&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_9&quot;);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Panel_TotalLevel" class="panel_Base zoneFix_middle" style="background-image: none; height: 80%; display: flex;">
+                <ui:VisualElement name="Middle" class="horizontal" style="height: auto; width: 100%; display: none; visibility: visible;">
+                    <ui:Button name="Tab_Previor" enabled="true" class="center spacing20 button_befor square_100px" style="-unity-background-image-tint-color: rgb(255, 255, 255);" />
+                    <ui:VisualElement name="Image_Level" class="spacing20 center viewCosmicObject" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=-394422490&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_101&quot;); display: flex; visibility: visible;" />
+                    <ui:Button name="Tab_Next" enabled="true" class="center spacing20 button_after square_100px" style="-unity-background-image-tint-color: rgb(255, 255, 255);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Bottom" class="vetical zoneFix_bottom spacing40" style="background-image: none; display: flex; width: 100%;">
+                    <ui:ProgressBar value="22" name="Progress" class="TextBase font40" style="width: 600px; height: 64px; display: none;" />
+                    <ui:Button text="Play" name="Tab_Play" enabled="true" class="spacing20 TextBase font50 rectangle_250x150px backGround_bt_t1" style="opacity: 1; display: flex;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Panel_Feature" class="horizontal panel_Base zoneFix_bottom" style="background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300000&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window&quot;); display: flex;">
+                <ui:Button text="Shop" name="Tab_Shop" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" style="display: none;" />
+                <ui:Button name="Tab_Home" enabled="true" text="Home" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" style="display: none;" />
+                <ui:Button text="Upgrade" name="Tab_Upgrade" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Page_Upgrade" class="page_Base" style="display: none;">
+        <ui:VisualElement name="Container" style="width: 100%; height: 100%;">
+            <ui:VisualElement name="Panel_Info" class="panel_Base zoneFix_top spacing20" style="background-image: none; display: flex;">
+                <ui:VisualElement name="Left" class="zoneFix_left horizontal_left">
+                    <ui:VisualElement name="Left" class="horizontal_child">
+                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=340961377&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_7&quot;);" />
+                        <TextArea text="1" name="Value_Coin" focusable="true" class="TextBase textArea font40" />
+                        <ui:Button name="Tab_Add_Coin" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300012&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#plus&quot;);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Right" class="horizontal_child" style="display: none;">
+                        <ui:VisualElement name="Image_Cristal" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=867521007&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_8&quot;);" />
+                        <TextArea name="Value_Crystal" text="1" focusable="true" class="TextBase textArea font40" />
+                        <ui:Button name="Tab_Add_Cristal" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=-890885736&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_59&quot;);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Right" class="horizontal_child zoneFix_right" style="display: flex; background-image: none;">
+                    <ui:Button name="Tab_Home" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300030&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#back_arrow&quot;);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Panel_Upgrade" class="panel_Base" style="background-image: none; display: flex; position: absolute; top: 10%; bottom: 0%;">
+                <ui:VisualElement name="Top" class="vetical" style="background-image: none; display: flex; width: 100%;" />
+                <ui:VisualElement name="Middle" class="vetical" style="height: 100%; width: 100%; justify-content: flex-start;">
+                    <ui:VisualElement name="Top" class="horizontal" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300000&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window&quot;); width: 100%; height: 100%; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0);">
+                        <ui:Button name="Image_Health" enabled="true" class="square_200px spacing40" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Belevich/Hyper%20casual%20mobile%20GUI/Sprites/icons.png?fileID=-1095917349&amp;guid=a5e645d0b2507ac42807ef8e886f7d45&amp;type=3#icons_4&quot;); justify-content: center; align-self: center; align-items: auto; flex-wrap: nowrap; flex-direction: row; align-content: center; background-color: rgba(0, 0, 0, 0);" />
+                        <ui:Label text="=" name="Equal" class="spacing40 TextBase" style="font-size: 150px; align-self: center; -unity-font-style: bold; color: rgb(255, 255, 255);" />
+                        <ui:Label text="3" name="Value_Health" class="TextBase spacing40" style="font-size: 100px; align-self: center; -unity-font-style: bold; color: rgb(255, 255, 255);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="none" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300000&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window&quot;); width: 100%; height: 100%; visibility: hidden;" />
+                    <ui:VisualElement name="Bottom" class="horizontal" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300000&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window&quot;); width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.93); -unity-background-image-tint-color: rgb(255, 255, 255);">
+                        <ui:Button text="Add Health" name="Tab_Add_Health" enabled="true" class="spacing20 TextBase font40 backGround_bt_t1" style="align-self: center; flex-wrap: wrap; flex-direction: row; align-content: flex-start; justify-content: flex-start; width: 300px; height: 150px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Bottom" class="vetical spacing40" style="background-image: none; display: flex; width: 100%; visibility: visible;">
+                    <ui:Button name="Tab_" enabled="true" class="button_rectangle spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300030&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#back_arrow&quot;); display: flex; visibility: hidden;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Page_Setting" class="page_Base" style="display: none;">
+        <ui:VisualElement name="Br" class="zoneFix_full backGround_base" />
+        <ui:VisualElement name="Container" style="width: 100%; height: 100%; display: flex;">
+            <ui:VisualElement name="Panel_Info" class="horizontal zoneFix_top spacing20" style="background-image: none; justify-content: center; align-self: flex-start;">
+                <ui:VisualElement name="Left" class="horizontal_child">
+                    <ui:Button name="Tab_GeneralSetting" enabled="true" text="General" class="spacing20 rectangle_250x80px font30 TextBase backGround_bt_t2" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Middle" class="horizontal_child">
+                    <ui:Button name="Tab_OtherSetting" enabled="true" text="Other" class="spacing20 rectangle_250x80px font30 TextBase backGround_bt_t2" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Right" class="horizontal_child">
+                    <ui:Button name="Tab_Home" enabled="true" class="button_rectangle spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300030&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#back_arrow&quot;);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Middle" class="zoneFix_middle" style="height: 81%; background-image: none; width: auto; align-self: center;">
+                <ui:VisualElement name="Panel_GeneralSetting" class="panel_Base font40 vetical" style="flex-grow: 1; height: 70%; background-image: none; flex-direction: column; flex-wrap: wrap; display: flex;">
+                    <ui:SliderInt label="Light" value="50" high-value="100" name="Light" class="TextBase font30" style="width: 900px;" />
+                    <ui:SliderInt label="Sound" value="50" high-value="100" name="Sound_Bt" class="TextBase font30" style="width: 900px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Panel_OtherSetting" class="panel_Base" style="flex-grow: 1; height: auto; background-image: none; display: none; visibility: visible; width: auto;">
+                    <ui:VisualElement name="Top" class="panel_Base horizontal_child" style="flex-grow: 1; height: auto; background-image: none; display: none; visibility: visible; width: auto;">
+                        <ui:Button text="Help" name="Tab_Help" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" />
+                        <ui:Button text="Reset" name="Tab_Reset" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" />
+                        <ui:Button text="Apply" name="Tab_Apply" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Bottom" class="panel_Base horizontal_child_Bottom" style="flex-grow: 1; height: auto; background-image: none; display: flex; visibility: visible; width: auto;">
+                        <ui:Button text="Quit" name="Tab_QuitApp" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" style="background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300000&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window&quot;);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Bottom" class="horizontal zoneFix_bottom" style="background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300000&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window&quot;);">
+                <ui:Button text="Help" name="Tab_Help" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" />
+                <ui:Button text="Reset" name="Tab_Reset" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" />
+                <ui:Button text="Apply" name="Tab_Apply" enabled="true" class="spacing20 TextBase font40 rectangle_250x150px backGround_bt_t1" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Page_Play" class="page_Base" style="display: none; visibility: visible;">
+        <ui:VisualElement name="Container" style="width: 100%; height: 100%;">
+            <ui:VisualElement name="Panel_Info" class="panel_Base zoneFix_top spacing20" style="background-image: none; display: flex;">
+                <ui:VisualElement name="Left" class="zoneFix_left horizontal_left">
+                    <ui:VisualElement name="Left" class="horizontal_child">
+                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=340961377&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_7&quot;);" />
+                        <TextArea text="1" name="Value_Coin" focusable="true" class="TextBase textArea font40" />
+                        <ui:Button name="Tab_Add_Coin" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=-890885736&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_59&quot;); display: none;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Right" class="horizontal_child" style="display: none;">
+                        <ui:VisualElement name="Image_Cristal" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=867521007&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_8&quot;);" />
+                        <TextArea name="Value_Cristal" text="1" focusable="true" class="TextBase textArea font40" />
+                        <ui:Button name="Tab_Add_Cristal" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=-890885736&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_59&quot;); display: none;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Right" class="horizontal_child zoneFix_right">
+                    <ui:Button name="Tab_Pause" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300018&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#pause&quot;);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Panel_TotalLevel" class="panel_Base" style="background-image: none; display: flex; position: absolute; top: 10%; bottom: 0%;">
+                <ui:VisualElement name="Top" class="vetical" style="background-image: none; display: flex; width: 100%;" />
+                <ui:VisualElement name="Middle" class="horizontal" style="height: auto; width: 100%;">
+                    <ui:VisualElement name="Left" style="flex-grow: 1;">
+                        <ProgressBarCustom name="Value_Heath" fill-color="#FF2B00FF" track-color="#FFFFFF00" value="10" min="0" max="100" angle="0" style="rotate: -90deg; translate: -128px 200px; background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300028&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#progress_bar_background1&quot;); width: 380px; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); -unity-background-scale-mode: stretch-to-fill; background-position-y: center 0; background-position-x: center 0; border-top-width: 2px; border-left-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-top-right-radius: 4px; border-top-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Right" style="flex-grow: 1;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Bottom" class="vetical spacing40" style="background-image: none; display: flex; width: 100%;">
+                    <ui:Button name="Tab_Booted" enabled="true" class="spacing20 square_200px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300020&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#rocket&quot;); display: none;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Popup_Popup" class="popup_Base" style="display: none;">
+        <ui:VisualElement style="flex-grow: 1;" />
+        <ui:VisualElement name="Container" class="backGround_base" style="display: flex; visibility: visible;">
+            <ui:VisualElement name="Top" class="panel_Base" />
+            <ui:VisualElement name="Middle" class="panel_Base vetical_center" style="flex-grow: 1; height: 50%;" />
+            <ui:VisualElement name="Bottom" class="panel_Base horizontal spacing40" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="BoxTempleElement" class="backGround_base" style="display: none;">
+        <ui:Instance template="Title" />
+        <ui:Instance template="TextField" name="DefaultTextField" />
+        <ui:Instance template="Description" name="DefaultDescription" />
+        <ui:Instance template="Tab_Image" />
+        <ui:Instance template="Tab_A1" />
+    </ui:VisualElement>
+</ui:UXML>

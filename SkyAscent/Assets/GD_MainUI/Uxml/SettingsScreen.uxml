@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GD_MainUI/USS/Common.uss?fileID=7433441132597879392&amp;guid=e58b11169bda2e442833e31642716aae&amp;type=3#Common" />
+    <Style src="project://database/Assets/GD_MainUI/USS/Buttons.uss?fileID=7433441132597879392&amp;guid=4707cd76306aadd4fadef2d5a6af9bdf&amp;type=3#Buttons" />
+    <Style src="project://database/Assets/GD_MainUI/USS/SettingsScreen.uss?fileID=7433441132597879392&amp;guid=67939c24007a176448be0182434e59ca&amp;type=3#SettingsScreen" />
+    <ui:VisualElement name="settings__screen" style="flex-grow: 1; background-color: rgb(255, 0, 0); position: absolute; top: 0%; left: 0%; right: 0%; bottom: -1%;">
+        <ui:Button text="Button" name="settings__screen--close-button" />
+    </ui:VisualElement>
+</ui:UXML>

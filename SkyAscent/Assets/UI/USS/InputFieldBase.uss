@@ -1,0 +1,29 @@
+.inputField_01 #unity-text-input {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300028&guid=56d84991286850f428b4e7df0cca7380&type=3#progress_bar_background1");
+    color: rgb(0, 0, 0);
+    -unity-text-align: upper-left;
+    background-position-x: center 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.inputField_01 :inactive {
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    white-space: normal;
+    text-overflow: clip;
+    visibility: visible;
+    transition-duration: 0.25s;
+}
+
+.square_200px {
+    width: 200px;
+    height: 200px;
+}
+
+.middle_root {
+}

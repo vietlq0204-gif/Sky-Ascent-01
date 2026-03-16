@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GD_MainUI/USS/Common.uss?fileID=7433441132597879392&amp;guid=e58b11169bda2e442833e31642716aae&amp;type=3#Common" />
+    <ui:Button icon-image="project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300020&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#rocket" name="button-boost" style="background-color: rgba(188, 188, 188, 0); -unity-background-scale-mode: scale-and-crop; width: 256px; height: 256px; position: absolute; left: 1%; bottom: 25%;" />
+    <ui:VisualElement name="fuel-bar__container" picking-mode="Ignore" style="flex-grow: 1; position: absolute; right: 0;" />
+</ui:UXML>

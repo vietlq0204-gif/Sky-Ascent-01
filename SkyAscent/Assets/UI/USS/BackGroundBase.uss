@@ -1,0 +1,33 @@
+.backGround_base {
+    background-image: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300000&guid=56d84991286850f428b4e7df0cca7380&type=3#window");
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.86);
+}
+
+.backGround_bt_t1 {
+    display: flex;
+    background-image: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300014&guid=56d84991286850f428b4e7df0cca7380&type=3#button1");
+    background-position-x: center 0;
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    background-repeat: no-repeat no-repeat;
+    -unity-slice-type: sliced;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: 100% 100%;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.backGround_bt_t2 {
+    background-image: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300024&guid=56d84991286850f428b4e7df0cca7380&type=3#button_active");
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}

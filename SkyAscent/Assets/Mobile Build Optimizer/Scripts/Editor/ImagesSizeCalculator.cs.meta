@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ce8fe16512ca9f3469fbd9bba4f83570
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 310459
+  packageName: Mobile Build Optimizer | Optimize build in 2 clicks
+  packageVersion: 1.0
+  assetPath: Assets/Mobile Build Optimizer/Scripts/Editor/ImagesSizeCalculator.cs
+  uploadId: 799740

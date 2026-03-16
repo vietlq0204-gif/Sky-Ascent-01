@@ -1,0 +1,98 @@
+.options-bar {
+    width: 100%;
+    height: 100%;
+    -unity-font-definition: url("project://database/Assets/Game%20Fonts/Goldman-Regular%20SDF.asset?fileID=11400000&guid=441e91d973ad0b7418b4033dd835af72&type=2#Goldman-Regular SDF");
+    flex-direction: row-reverse;
+}
+
+.options-bar__button {
+    position: absolute;
+    right: 10px;
+}
+
+.options-bar__button:active {
+    -unity-background-image-tint-color: rgb(230, 126, 34);
+    background-color: rgb(255, 255, 255);
+}
+
+.options-bar-currency-group {
+    height: 59%;
+    margin: 0;
+    padding: 0;
+    width: 255px;
+    flex-direction: row;
+    right: 2px;
+}
+
+.currency-hud {
+    position: absolute;
+    right: 373px;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.options-bar-currency-icon {
+    background-color: rgb(52, 152, 219);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 22px;
+    margin: 0;
+    padding: 0;
+    top: 2px;
+}
+
+.currency-hud-icon {
+    left: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(52, 152, 219, 0);
+    width: 79px;
+    height: 71px;
+    top: -3px;
+}
+
+.options-bar-currency-count {
+    -unity-font-style: normal;
+    color: rgb(255, 255, 255);
+    font-size: 236%;
+    position: absolute;
+    right: 24%;
+    bottom: 9%;
+}
+
+.currency-amount-text {
+    flex-basis: 54%;
+    bottom: 5px;
+    right: 27%;
+    -unity-text-align: middle-right;
+    width: 86px;
+    top: -6px;
+    color: rgb(253, 240, 219);
+    font-size: 40px;
+    left: 104px;
+}
+
+.options-bar-currency-shop-button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -unity-font-style: bold;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    transition-duration: 0.25s;
+}
+
+.options-bar-currency-shop-button:active {
+    background-color: rgb(255, 255, 255);
+    -unity-background-image-tint-color: rgb(230, 126, 34);
+    scale: 1.1 1.1;
+}
+
+.options-bar__button {
+    width: 70px;
+    height: 70px;
+    -unity-background-scale-mode: scale-to-fit;
+}

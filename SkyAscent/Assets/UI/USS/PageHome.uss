@@ -1,0 +1,54 @@
+.zoneFix_top {
+    position: absolute;
+    top: 0;
+}
+
+.zoneFix_middle {
+    top: 10%;
+    bottom: 10%;
+}
+
+.zoneFix_bottom {
+    position: absolute;
+    bottom: 0%;
+}
+
+.zoneFix_right {
+    position: absolute;
+    right: 4%;
+}
+
+.zoneFix_left {
+    position: absolute;
+    left: 0%;
+    top: auto;
+    bottom: auto;
+}
+
+.zoneFix_full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.viewCosmicObject {
+    width: 640px;
+    height: 640px;
+    background-image: url("project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=-394422490&guid=ef50e949ae8746a478ea782dfb6f199a&type=3#UI_atlas_101");
+}
+
+.description_Base {
+}
+
+.horizontal_child_Bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    align-content: auto;
+    align-self: center;
+    align-items: stretch;
+    top: auto;
+}

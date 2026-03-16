@@ -1,0 +1,44 @@
+.square_80px {
+    width: 80px;
+    height: 80px;
+}
+
+.square_100px {
+    width: 100px;
+    height: 100px;
+}
+
+.square_150px {
+    width: 150px;
+    height: 150px;
+}
+
+.square_200px {
+    width: 200px;
+    height: 200px;
+}
+
+.square_250px {
+    width: 250px;
+    height: 250px;
+}
+
+.rectangle_250x80px {
+    width: 250px;
+    height: 80px;
+}
+
+.rectangle_200x100px {
+    width: 200px;
+    height: 100px;
+}
+
+.rectangle_250x150px {
+    width: 250px;
+    height: 150px;
+}
+
+.rectangle_300x100px {
+    width: 300px;
+    height: 100px;
+}

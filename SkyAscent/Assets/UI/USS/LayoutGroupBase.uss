@@ -1,0 +1,64 @@
+.vetical {
+    flex-direction: column;
+    align-self: center;
+    align-content: auto;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.vetical_center {
+    flex-direction: column;
+    align-self: center;
+    align-content: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal_right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-self: center;
+    align-content: flex-end;
+}
+
+.horizontal_left {
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    flex-grow: 1;
+}
+
+.horizontal {
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    flex-grow: 1;
+    justify-content: center;
+    align-content: auto;
+    align-self: center;
+    align-items: stretch;
+    width: 100%;
+}
+
+.horizontal_child {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    align-content: auto;
+    align-self: center;
+    align-items: stretch;
+    top: auto;
+}
+
+.horizontal_child_Bottom {
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    flex-grow: 1;
+    justify-content: center;
+    align-content: auto;
+    align-self: center;
+    align-items: stretch;
+    top: auto;
+}

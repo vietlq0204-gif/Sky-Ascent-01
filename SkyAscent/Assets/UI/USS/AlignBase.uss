@@ -1,0 +1,25 @@
+.center {
+    position: relative;
+    top: 58px;
+    align-self: center;
+    align-content: flex-start;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+}
+
+.right {
+    align-self: center;
+    right: 0%;
+    position: absolute;
+}
+
+.top {
+    top: 0%;
+    position: absolute;
+    align-self: center;
+}
+
+.bottom {
+    align-self: flex-end;
+    align-content: stretch;
+}

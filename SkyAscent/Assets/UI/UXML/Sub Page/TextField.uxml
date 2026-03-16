@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/PageHome.uss?fileID=7433441132597879392&amp;guid=a7c0de096e5ca1f4caa384e814b0e37d&amp;type=3#PageHome" />
+    <Style src="project://database/Assets/UI/USS/LayoutGroupBase.uss?fileID=7433441132597879392&amp;guid=61b74124914a7774cb1aca52b178edf6&amp;type=3#LayoutGroupBase" />
+    <Style src="project://database/Assets/UI/USS/BackGroundBase.uss?fileID=7433441132597879392&amp;guid=61c0a78c9fbdf2742b645d9d1b9deb7b&amp;type=3#BackGroundBase" />
+    <Style src="project://database/Assets/UI/USS/AlignBase.uss?fileID=7433441132597879392&amp;guid=0dcdc106edd5d3d4db5d3547ad632507&amp;type=3#AlignBase" />
+    <Style src="project://database/Assets/UI/USS/InputFieldBase.uss?fileID=7433441132597879392&amp;guid=8a61a41d7a424674fb815572c4b8ad65&amp;type=3#InputFieldBase" />
+    <Style src="project://database/Assets/UI/USS/SpacingBase.uss?fileID=7433441132597879392&amp;guid=c0f58fa8d3e2c6843a558512b541a3cc&amp;type=3#SpacingBase" />
+    <Style src="project://database/Assets/UI/USS/FontBase.uss?fileID=7433441132597879392&amp;guid=39d0a5d0260184e42b711400a3e6a7ac&amp;type=3#FontBase" />
+    <Style src="project://database/Assets/UI/USS/LabelBase.uss?fileID=7433441132597879392&amp;guid=d4e39278ac67b3342b7d8e7be43141b6&amp;type=3#LabelBase" />
+    <Style src="project://database/Assets/UI/USS/BaseBody.uss?fileID=7433441132597879392&amp;guid=e30c8d84c2d9a644f91407b7017e5c8c&amp;type=3#BaseBody" />
+    <Style src="project://database/Assets/UI/USS/ShapeBase.uss?fileID=7433441132597879392&amp;guid=d792493eb4b4ec040a9f14bedb5da1bf&amp;type=3#ShapeBase" />
+    <Style src="project://database/Assets/UI/USS/ButtonBase.uss?fileID=7433441132597879392&amp;guid=4dc53bb3b74bcdd43aabfbe5d1ff91ca&amp;type=3#ButtonBase" />
+    <ui:TextField label="Text Input" placeholder-text="filler text" focusable="true" name="TextField_Popup" hide-placeholder-on-focus="false" max-length="0" class="TextBase spacing20 inputField_01 font30 textField_Base" />
+</ui:UXML>

@@ -1,0 +1,40 @@
+Button {
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+    transition-delay: 0s;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+Button:active {
+    scale: 0.95 0.95;
+    position: relative;
+    align-content: auto;
+    align-items: auto;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.1s;
+    transition-delay: 0s;
+}
+
+.button_after {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/Bonus_Assets/arrows/arrow1_right.png?fileID=2800000&guid=b1e9e5e05f0067f469e748e46985c269&type=3#arrow1_right");
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.button_befor {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/Bonus_Assets/arrows/arrow1_left.png?fileID=2800000&guid=9871e4d5e19cea6419d057b79ce1a1a8&type=3#arrow1_left");
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
