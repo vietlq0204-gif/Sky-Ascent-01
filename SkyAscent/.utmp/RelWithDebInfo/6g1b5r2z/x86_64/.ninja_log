@@ -1,0 +1,12 @@
+# ninja log v5
+70	319	7953885021965454	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	ccba3821784aaa8d
+320	530	7953885023705521	E:/ProjectUnity/MainProject/MyMain/Sky-Ascent-01/SkyAscent/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6g1b5r2z/obj/x86_64/libswappywrapper.so	447dd6c4461ad9d
+29	1283	7953885031636089	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	8b274fd79cc5990f
+36	1321	7953885032025465	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	7ff8cf5f85194c17
+0	1333	7953885032140757	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	ec2a8b873782a057
+54	1362	7953885032444874	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	86f3122f20d09622
+12	2426	7953885032837107	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	13de5f73705c044a
+63	2430	7953885033879596	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	794ae84d77d4ec
+47	2437	7953885035014081	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	25747213bc534322
+20	2444	7953885043215907	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	66d0fadcc1f77ce0
+2444	2563	7953885044453415	E:/ProjectUnity/MainProject/MyMain/Sky-Ascent-01/SkyAscent/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6g1b5r2z/obj/x86_64/libgame.so	3b648270ae7d1abd

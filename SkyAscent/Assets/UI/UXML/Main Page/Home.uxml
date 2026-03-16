@@ -15,12 +15,12 @@
     <Style src="project://database/Assets/UI/USS/BaseBody.uss?fileID=7433441132597879392&amp;guid=e30c8d84c2d9a644f91407b7017e5c8c&amp;type=3#BaseBody" />
     <Style src="project://database/Assets/UI/USS/ShapeBase.uss?fileID=7433441132597879392&amp;guid=d792493eb4b4ec040a9f14bedb5da1bf&amp;type=3#ShapeBase" />
     <Style src="project://database/Assets/UI/USS/ButtonBase.uss?fileID=7433441132597879392&amp;guid=4dc53bb3b74bcdd43aabfbe5d1ff91ca&amp;type=3#ButtonBase" />
-    <ui:VisualElement name="Page_Home" class="page_Base" style="display: flex;">
+    <ui:VisualElement name="Page_Home" class="page_Base" style="display: none;">
         <ui:VisualElement name="Container" style="width: 100%; height: 100%;">
             <ui:VisualElement name="Panel_Info" class="panel_Base zoneFix_top spacing20" style="background-image: none; display: flex;">
                 <ui:VisualElement name="Left" class="zoneFix_left horizontal_left">
                     <ui:VisualElement name="Left" class="horizontal_child">
-                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=340961377&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_7&quot;);" />
+                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Belevich/Hyper%20casual%20mobile%20GUI/Sprites/icons.png?fileID=-1136330797&amp;guid=a5e645d0b2507ac42807ef8e886f7d45&amp;type=3#icons_17&quot;);" />
                         <TextArea name="Value_Coin" focusable="true" text="1" class="TextBase textArea font40" />
                         <ui:Button name="Tab_Add_Coin" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300012&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#plus&quot;);" />
                     </ui:VisualElement>
@@ -31,7 +31,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="Right" class="horizontal_child zoneFix_right">
-                    <ui:Button name="Tab_Setting" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=1396336879&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_9&quot;);" />
+                    <ui:Button name="Tab_Setting" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Belevich/Hyper%20casual%20mobile%20GUI/Sprites/buttons.png?fileID=-1582001816&amp;guid=156ec492e516ccb4099add479601d65e&amp;type=3#buttons_33&quot;);" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Panel_TotalLevel" class="panel_Base zoneFix_middle" style="background-image: none; height: 80%; display: flex;">
@@ -57,7 +57,7 @@
             <ui:VisualElement name="Panel_Info" class="panel_Base zoneFix_top spacing20" style="background-image: none; display: flex;">
                 <ui:VisualElement name="Left" class="zoneFix_left horizontal_left">
                     <ui:VisualElement name="Left" class="horizontal_child">
-                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=340961377&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_7&quot;);" />
+                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Belevich/Hyper%20casual%20mobile%20GUI/Sprites/icons.png?fileID=-1136330797&amp;guid=a5e645d0b2507ac42807ef8e886f7d45&amp;type=3#icons_17&quot;);" />
                         <TextArea text="1" name="Value_Coin" focusable="true" class="TextBase textArea font40" />
                         <ui:Button name="Tab_Add_Coin" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300012&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#plus&quot;);" />
                     </ui:VisualElement>
@@ -127,12 +127,12 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="Page_Play" class="page_Base" style="display: none; visibility: visible;">
+    <ui:VisualElement name="Page_Play" class="page_Base" style="display: flex; visibility: visible;">
         <ui:VisualElement name="Container" style="width: 100%; height: 100%;">
             <ui:VisualElement name="Panel_Info" class="panel_Base zoneFix_top spacing20" style="background-image: none; display: flex;">
                 <ui:VisualElement name="Left" class="zoneFix_left horizontal_left">
                     <ui:VisualElement name="Left" class="horizontal_child">
-                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=340961377&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_7&quot;);" />
+                        <ui:VisualElement name="Image_Coin" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Belevich/Hyper%20casual%20mobile%20GUI/Sprites/icons.png?fileID=-1136330797&amp;guid=a5e645d0b2507ac42807ef8e886f7d45&amp;type=3#icons_17&quot;);" />
                         <TextArea text="1" name="Value_Coin" focusable="true" class="TextBase textArea font40" />
                         <ui:Button name="Tab_Add_Coin" enabled="true" class="spacing20 square_80px" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/GD_MainUI/References/UI_atlas.psd?fileID=-890885736&amp;guid=ef50e949ae8746a478ea782dfb6f199a&amp;type=3#UI_atlas_59&quot;); display: none;" />
                     </ui:VisualElement>

@@ -489,8 +489,8 @@ public partial class CameraController
 
             if (Open)
             {
-                var oke = _listPoint.TryGetLastPoint(out target) ? target : _listPoint.GetPoint(2);
-                await MoveCameraToTargetAsync(target, 30f); //  tâm
+                // var oke = _listPoint.TryGetLastPoint(out target) ? target : _listPoint.GetPoint(2);
+                // await MoveCameraToTargetAsync(target, 30f); //  tâm
 
                 _listPoint.TryGetFirstPoint(out target);
                 await MoveCameraToTargetAsync(target, 15f); // nghiên
