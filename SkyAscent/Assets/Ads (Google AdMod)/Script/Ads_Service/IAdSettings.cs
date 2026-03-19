@@ -27,4 +27,5 @@ public interface IAdSettings
     bool ShouldPreloadWhenMenuOpens(AdFormatType format);
     bool ShouldPreloadDuringLoading(AdFormatType format);
     bool ShouldPersistAcrossScenes(AdFormatType format);
+    string[] GetTestDeviceIdsForCurrentPlatform();
 }

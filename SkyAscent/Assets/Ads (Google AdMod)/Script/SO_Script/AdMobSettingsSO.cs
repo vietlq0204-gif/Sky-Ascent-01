@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -101,6 +102,11 @@ public sealed class AdMobSettingsSO : ScriptableObject, IAdSettings
     [SerializeField] private string _androidAppId = string.Empty;
     [SerializeField] private string _iosAppId = string.Empty;
 
+    [Header("Testing")]
+    [SerializeField] private bool _useTestDeviceIds = true;
+    [SerializeField] private string[] _androidTestDeviceIds = Array.Empty<string>();
+    [SerializeField] private string[] _iosTestDeviceIds = Array.Empty<string>();
+
     [Header("Ad Formats")]
     [SerializeField] private BannerAdFormatSettings _banner = new BannerAdFormatSettings();
     [SerializeField] private AdFormatSettings _interstitial = new AdFormatSettings();
@@ -197,6 +203,7 @@ public sealed class AdMobSettingsSO : ScriptableObject, IAdSettings
     {
         _androidAppId ??= string.Empty;
         _iosAppId ??= string.Empty;
+        EnsureTestDeviceDefaults();
 
         _banner ??= new BannerAdFormatSettings();
         _interstitial ??= new AdFormatSettings();
@@ -258,6 +265,21 @@ public sealed class AdMobSettingsSO : ScriptableObject, IAdSettings
         return !string.IsNullOrWhiteSpace(IosAppId);
     }
 
+    public string[] GetTestDeviceIdsForCurrentPlatform()
+    {
+        if (!_useTestDeviceIds)
+            return Array.Empty<string>();
+
+#if UNITY_IOS
+        return SanitizeTestDeviceIds(_iosTestDeviceIds);
+#elif UNITY_ANDROID
+        return SanitizeTestDeviceIds(_androidTestDeviceIds);
+#else
+        string[] androidIds = SanitizeTestDeviceIds(_androidTestDeviceIds);
+        return androidIds.Length > 0 ? androidIds : SanitizeTestDeviceIds(_iosTestDeviceIds);
+#endif
+    }
+
     public bool LooksLikeValidAppId(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
@@ -296,5 +318,34 @@ public sealed class AdMobSettingsSO : ScriptableObject, IAdSettings
             default:
                 return null;
         }
+    }
+
+    private void Reset()
+    {
+        EnsureDefaults();
+    }
+
+    private void EnsureTestDeviceDefaults()
+    {
+        _androidTestDeviceIds ??= Array.Empty<string>();
+        _iosTestDeviceIds ??= Array.Empty<string>();
+    }
+
+    private static string[] SanitizeTestDeviceIds(string[] testDeviceIds)
+    {
+        if (testDeviceIds == null || testDeviceIds.Length == 0)
+            return Array.Empty<string>();
+
+        var sanitized = new List<string>(testDeviceIds.Length);
+        for (int i = 0; i < testDeviceIds.Length; i++)
+        {
+            string trimmed = (testDeviceIds[i] ?? string.Empty).Trim();
+            if (string.IsNullOrWhiteSpace(trimmed) || sanitized.Contains(trimmed))
+                continue;
+
+            sanitized.Add(trimmed);
+        }
+
+        return sanitized.Count > 0 ? sanitized.ToArray() : Array.Empty<string>();
     }
 }

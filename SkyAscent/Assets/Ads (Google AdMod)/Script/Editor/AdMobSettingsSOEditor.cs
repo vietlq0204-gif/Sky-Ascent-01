@@ -27,6 +27,9 @@ public sealed class AdMobSettingsSOEditor : Editor
     private SerializedProperty _verboseLogging;
     private SerializedProperty _androidAppId;
     private SerializedProperty _iosAppId;
+    private SerializedProperty _useTestDeviceIds;
+    private SerializedProperty _androidTestDeviceIds;
+    private SerializedProperty _iosTestDeviceIds;
     private SerializedProperty _banner;
     private SerializedProperty _interstitial;
     private SerializedProperty _rewarded;
@@ -46,6 +49,9 @@ public sealed class AdMobSettingsSOEditor : Editor
         _verboseLogging = serializedObject.FindProperty("_verboseLogging");
         _androidAppId = serializedObject.FindProperty("_androidAppId");
         _iosAppId = serializedObject.FindProperty("_iosAppId");
+        _useTestDeviceIds = serializedObject.FindProperty("_useTestDeviceIds");
+        _androidTestDeviceIds = serializedObject.FindProperty("_androidTestDeviceIds");
+        _iosTestDeviceIds = serializedObject.FindProperty("_iosTestDeviceIds");
         _banner = serializedObject.FindProperty("_banner");
         _interstitial = serializedObject.FindProperty("_interstitial");
         _rewarded = serializedObject.FindProperty("_rewarded");
@@ -64,6 +70,7 @@ public sealed class AdMobSettingsSOEditor : Editor
         DrawHeader(settings);
         DrawProviderAndGeneral();
         DrawAppIdSection(settings);
+        DrawTestingSection();
         DrawFormatsSection(settings);
         DrawActions(settings);
 
@@ -202,6 +209,31 @@ public sealed class AdMobSettingsSOEditor : Editor
         DrawAdFormatSection("Rewarded Interstitial", _rewardedInterstitial, settings, AdFormatType.RewardedInterstitial);
         DrawAdFormatSection("App Open", _appOpen, settings, AdFormatType.AppOpen);
         DrawAdFormatSection("Native Overlay", _nativeOverlay, settings, AdFormatType.NativeOverlay, includeNativeOptions: true);
+    }
+
+    private void DrawTestingSection()
+    {
+        EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+        EditorGUILayout.LabelField("Testing", EditorStyles.boldLabel);
+        EditorGUILayout.PropertyField(_useTestDeviceIds, new GUIContent("Use Test Device IDs"));
+
+        if (_useTestDeviceIds.boolValue)
+        {
+            EditorGUILayout.PropertyField(_androidTestDeviceIds, new GUIContent("Android Test Device IDs"), true);
+            EditorGUILayout.PropertyField(_iosTestDeviceIds, new GUIContent("iOS Test Device IDs"), true);
+            EditorGUILayout.HelpBox(
+                "These IDs are applied through MobileAds.SetRequestConfiguration before the SDK initializes. A recognized device should receive test ads even when you use production ad unit IDs.",
+                MessageType.None);
+        }
+        else
+        {
+            EditorGUILayout.HelpBox(
+                "Test device IDs are disabled. Production ad requests will behave normally for the current device.",
+                MessageType.Warning);
+        }
+
+        EditorGUILayout.EndVertical();
+        EditorGUILayout.Space(6f);
     }
 
     private void DrawAdFormatSection(

@@ -95,6 +95,7 @@ public sealed class AdMobService : IAdService
 #pragma warning disable 618
         MobileAds.RaiseAdEventsOnUnityMainThread = false;
 #pragma warning restore 618
+        ApplyRequestConfiguration();
         MobileAds.Initialize(_ =>
         {
             Dispatch(() =>
@@ -355,6 +356,27 @@ public sealed class AdMobService : IAdService
     }
 
 #if GOOGLE_MOBILE_ADS
+    private void ApplyRequestConfiguration()
+    {
+        string[] configuredTestDeviceIds = _settings.GetTestDeviceIdsForCurrentPlatform();
+        var requestConfiguration = new RequestConfiguration
+        {
+            TestDeviceIds = configuredTestDeviceIds.Length > 0
+                ? new List<string>(configuredTestDeviceIds)
+                : new List<string>(),
+        };
+
+        MobileAds.SetRequestConfiguration(requestConfiguration);
+
+        if (_settings.VerboseLogging)
+        {
+            string configuredIds = configuredTestDeviceIds.Length > 0
+                ? string.Join(", ", configuredTestDeviceIds)
+                : "none";
+            Debug.Log($"[AdMobService] Applied test device IDs: {configuredIds}");
+        }
+    }
+
     private AdRequest BuildRequest()
     {
         return new AdRequest();
