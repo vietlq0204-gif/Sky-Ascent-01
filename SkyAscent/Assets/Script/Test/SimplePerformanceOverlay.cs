@@ -31,7 +31,10 @@ public class SimplePerformanceOverlay : MonoBehaviour
     private float _gpuFrameMs;
     private long _monoUsedBytes; // Bộ nhớ Mono đã sử dụng (chủ yếu là heap của C#)
     private long _totalAllocatedBytes; // Tổng bộ nhớ đã cấp phát (bao gồm cả đã giải phóng nhưng chưa thu hồi)
-    private long _totalReservedBytes; // Tổng bộ nhớ đã cấp phát và chưa giải phóng (bao gồm cả đã giải phóng nhưng chưa thu hồi)
+
+    private long
+        _totalReservedBytes; // Tổng bộ nhớ đã cấp phát và chưa giải phóng (bao gồm cả đã giải phóng nhưng chưa thu hồi)
+
     private bool _isVisible;
     private GUIStyle _labelStyle;
 
@@ -123,13 +126,15 @@ public class SimplePerformanceOverlay : MonoBehaviour
         string gpuText = _hasGpuRecorder ? $"{_gpuFrameMs:0.00} ms" : "N/A";
 
         string content =
-            $"FPS: {_currentFps:0.0}\n" +
-            $"Frame: {_currentFrameMs:0.00} ms\n" +
-            $"CPU: {_cpuFrameMs:0.00} ms\n" +
-            $"GPU: {gpuText}\n" +
-            $"RAM Alloc: {FormatBytesToMb(_totalAllocatedBytes)}\n" +
-            $"RAM Reserve: {FormatBytesToMb(_totalReservedBytes)}\n" +
-            $"Mono Used: {FormatBytesToMb(_monoUsedBytes)}";
+                $"FPS: {_currentFps:0.0}\n" +
+                // $"Frame: {_currentFrameMs:0.00} ms\n" +
+                $"CPU: {_cpuFrameMs:0.00} ms\n" +
+                $"GPU: {gpuText}\n"
+            // +
+            // $"RAM Alloc: {FormatBytesToMb(_totalAllocatedBytes)}\n" +
+            // $"RAM Reserve: {FormatBytesToMb(_totalReservedBytes)}\n" +
+            // $"Mono Used: {FormatBytesToMb(_monoUsedBytes)}"
+            ;
 
         GUI.Label(
             new Rect(offset.x, offset.y, boxSize.x, boxSize.y),

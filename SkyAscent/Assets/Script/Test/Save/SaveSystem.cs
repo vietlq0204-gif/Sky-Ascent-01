@@ -1,41 +1,35 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json;
-using JsonFormatting = Newtonsoft.Json.Formatting;
+using Newtonsoft.Json.Linq;
 using Save.Abstractions;
 using Save.IO;
-using Newtonsoft.Json.Linq;
 
 namespace Save.Core
 {
     /// <summary>
-    /// SaveSystem: orchestrate Save/Load theo user, transaction temp/backup.
+    /// SaveSystem: orchestrate Save/Load theo user qua save store.
     /// </summary>
     /// <remarks>
     /// - Không singleton.
-    /// - Dùng DI inject: accountContext + folderProvider + fileHandler.
+    /// - Dùng DI inject: accountContext + saveStore.
     /// - Registry ISaveable bằng Dictionary để lookup O(1).
     /// </remarks>
     public sealed class SaveSystem : ISaveSystem
     {
         private readonly IAccountContext _account;
-        private readonly IFolderProvider _folders;
-        private readonly IFileHandler _files;
+        private readonly ISaveStore _store;
 
         private readonly Dictionary<string, ISaveable> _saveablesByKey = new Dictionary<string, ISaveable>(64);
 
         #region Contructor
 
-        public SaveSystem(IAccountContext account, IFolderProvider folders, IFileHandler files)
+        public SaveSystem(IAccountContext account, ISaveStore store)
         {
             _account = account;
-            _folders = folders;
-            _files = files;
+            _store = store;
         }
 
         #endregion
-
 
         /// <summary>
         /// Register module saveable.
@@ -63,104 +57,44 @@ namespace Save.Core
         }
 
         /// <summary>
-        /// Save tất cả module (transaction temp -> active + backup rollback).
+        /// Save tất cả module thành một snapshot rồi giao cho store lưu.
         /// </summary>
         public void SaveAll()
         {
             string userId = _account.UserId;
-            string active = _folders.GetActiveSlotFolder(userId);
-            string backup = _folders.GetBackupFolder(userId);
+            var snapshot = new SaveSnapshot();
 
-            _files.EnsureDirectory(_folders.GetUserRoot(userId));
-
-            // 1) temp folder
-            string tempId = Guid.NewGuid().ToString("N");
-            string temp = _folders.GetTempFolder(userId, tempId);
-            _files.CreateDirectory(temp);
-
-            try
+            foreach (var kv in _saveablesByKey)
             {
-                // 2) write all json to temp
-                foreach (var kv in _saveablesByKey)
-                {
-                    var saveable = kv.Value;
-                    if (saveable == null) continue;
-                    if (!saveable.ShouldSave) continue;
+                var saveable = kv.Value;
+                if (saveable == null) continue;
+                if (!saveable.ShouldSave) continue;
 
-                    saveable.BeforeSave();
+                saveable.BeforeSave();
 
-                    object dto = saveable.Capture();
-                    if (dto == null) continue;
+                object dto = saveable.Capture();
+                if (dto == null) continue;
 
-                    var env = BuildEnvelope(saveable, dto);
-                    string json = JsonConvert.SerializeObject(env, JsonFormatting.Indented);
-
-                    string filePath = Path.Combine(temp, $"{saveable.Key}.json");
-                    _files.WriteAllText(filePath, json);
-                }
-
-                // 3) backup active -> backup
-                if (_files.DirectoryExists(active))
-                {
-                    _files.MoveDirectory(active, backup);
-                }
-
-                // 4) move temp -> active
-                _files.MoveDirectory(temp, active);
-
-                // 5) cleanup backup (optional)
-                // _files.DeleteDirectory(backup, true);
+                snapshot.Entries[saveable.Key] = BuildEnvelope(saveable, dto);
             }
-            catch
-            {
-                // rollback best-effort
-                try
-                {
-                    // restore backup -> active if active missing
-                    if (!_files.DirectoryExists(active) && _files.DirectoryExists(backup))
-                        _files.MoveDirectory(backup, active);
-                }
-                catch { /* swallow rollback errors */ }
 
-                // cleanup temp
-                try { _files.DeleteDirectory(temp, true); } catch { }
-
-                throw;
-            }
+            _store.Save(userId, snapshot);
         }
 
         /// <summary>
-        /// Load tất cả module từ slot active (nếu có).
+        /// Load tất cả module từ store.
         /// </summary>
         public void LoadAll()
         {
             string userId = _account.UserId;
-            string active = _folders.GetActiveSlotFolder(userId);
-
-            if (!_files.DirectoryExists(active))
-                return;
-
-            string[] files = _files.GetFiles(active, "*.json");
-            if (files == null || files.Length == 0)
+            var snapshot = _store.Load(userId);
+            if (snapshot == null || snapshot.Entries.Count == 0)
                 return;
 
             // 1) restore data
-            for (int i = 0; i < files.Length; i++)
+            foreach (var kv in snapshot.Entries)
             {
-                string path = files[i];
-                string json = _files.ReadAllText(path);
-
-                SaveEnvelope env;
-                try
-                {
-                    env = JsonConvert.DeserializeObject<SaveEnvelope>(json);
-                }
-                catch
-                {
-                    // file corrupt -> skip
-                    continue;
-                }
-
+                SaveEnvelope env = kv.Value;
                 if (env == null || string.IsNullOrWhiteSpace(env.key))
                     continue;
 

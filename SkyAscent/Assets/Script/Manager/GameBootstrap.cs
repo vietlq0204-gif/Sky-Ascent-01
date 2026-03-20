@@ -169,9 +169,10 @@ public class GameBootstrap : MonoBehaviour
 
         IFolderProvider folders = new FolderProvider(Application.persistentDataPath);
         IFileHandler files = new JsonFileHandlerNewtonsoft();
+        ISaveStore store = new LocalJsonSaveStore(folders, files);
 
         // build SaveSystem
-        _saveSystem = new SaveSystem(account, folders, files);
+        _saveSystem = new SaveSystem(account, store);
 
         RegistorAdapterSaveable();
     }

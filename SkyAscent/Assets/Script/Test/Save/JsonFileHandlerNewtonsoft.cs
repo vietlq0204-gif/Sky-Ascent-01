@@ -1,4 +1,8 @@
-﻿using System.IO;
+using System;
+using System.IO;
+using Newtonsoft.Json;
+using JsonFormatting = Newtonsoft.Json.Formatting;
+using Save.Abstractions;
 
 namespace Save.IO
 {
@@ -72,6 +76,111 @@ namespace Save.IO
             Directory.CreateDirectory(folderPath);
         }
     }
+
+    /// <summary>
+    /// SaveStore local dựa trên file JSON, có temp/backup để giảm rủi ro corrupt.
+    /// </summary>
+    public sealed class LocalJsonSaveStore : ISaveStore
+    {
+        private readonly IFolderProvider _folders;
+        private readonly IFileHandler _files;
+
+        public LocalJsonSaveStore(IFolderProvider folders, IFileHandler files)
+        {
+            _folders = folders;
+            _files = files;
+        }
+
+        public void Save(string userId, SaveSnapshot snapshot)
+        {
+            if (snapshot == null) throw new ArgumentNullException(nameof(snapshot));
+
+            string active = _folders.GetActiveSlotFolder(userId);
+            string backup = _folders.GetBackupFolder(userId);
+
+            _files.EnsureDirectory(_folders.GetUserRoot(userId));
+
+            string tempId = Guid.NewGuid().ToString("N");
+            string temp = _folders.GetTempFolder(userId, tempId);
+            _files.CreateDirectory(temp);
+
+            try
+            {
+                foreach (var kv in snapshot.Entries)
+                {
+                    var envelope = kv.Value;
+                    if (envelope == null || string.IsNullOrWhiteSpace(envelope.key))
+                        continue;
+
+                    string json = JsonConvert.SerializeObject(envelope, JsonFormatting.Indented);
+                    string filePath = Path.Combine(temp, $"{envelope.key}.json");
+                    _files.WriteAllText(filePath, json);
+                }
+
+                if (_files.DirectoryExists(active))
+                {
+                    _files.MoveDirectory(active, backup);
+                }
+
+                _files.MoveDirectory(temp, active);
+            }
+            catch
+            {
+                try
+                {
+                    if (!_files.DirectoryExists(active) && _files.DirectoryExists(backup))
+                        _files.MoveDirectory(backup, active);
+                }
+                catch
+                {
+                }
+
+                try
+                {
+                    _files.DeleteDirectory(temp, true);
+                }
+                catch
+                {
+                }
+
+                throw;
+            }
+        }
+
+        public SaveSnapshot Load(string userId)
+        {
+            var snapshot = new SaveSnapshot();
+            string active = _folders.GetActiveSlotFolder(userId);
+
+            if (!_files.DirectoryExists(active))
+                return snapshot;
+
+            string[] files = _files.GetFiles(active, "*.json");
+            if (files == null || files.Length == 0)
+                return snapshot;
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                string path = files[i];
+                string json = _files.ReadAllText(path);
+
+                SaveEnvelope envelope;
+                try
+                {
+                    envelope = JsonConvert.DeserializeObject<SaveEnvelope>(json);
+                }
+                catch
+                {
+                    continue;
+                }
+
+                if (envelope == null || string.IsNullOrWhiteSpace(envelope.key))
+                    continue;
+
+                snapshot.Entries[envelope.key] = envelope;
+            }
+
+            return snapshot;
+        }
+    }
 }
-
-

@@ -55,6 +55,26 @@
 
 namespace Save.IO
 {
+    using System.Collections.Generic;
+    using Save.Abstractions;
+
+    /// <summary>
+    /// Snapshot toàn bộ dữ liệu save của một user.
+    /// </summary>
+    public sealed class SaveSnapshot
+    {
+        public Dictionary<string, SaveEnvelope> Entries { get; } = new Dictionary<string, SaveEnvelope>(64);
+    }
+
+    /// <summary>
+    /// Abstraction cho tầng lưu trữ save snapshot.
+    /// </summary>
+    public interface ISaveStore
+    {
+        void Save(string userId, SaveSnapshot snapshot);
+        SaveSnapshot Load(string userId);
+    }
+
     /// <summary>
     /// Abstraction cho file IO.
     /// </summary>

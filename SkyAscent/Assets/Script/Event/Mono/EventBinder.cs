@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// EventBinder là một MonoBehaviour giúp quản lý việc đăng ký và hủy đăng ký sự kiện một cách tự động.
-/// </summary>
+
 public class EventBinder : MonoBehaviour
 {
     private readonly List<Action> _unsubscribers = new();
