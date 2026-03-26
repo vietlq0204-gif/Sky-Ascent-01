@@ -1,5 +1,4 @@
-﻿
-using Save.Abstractions;
+using ViT.SaveKit.Abstractions;
 
 public class ItemSaveAdapter : ISaveable, IInject<ItemManager>
 {
@@ -16,14 +15,12 @@ public class ItemSaveAdapter : ISaveable, IInject<ItemManager>
     }
 
     public string Key => "item";
-
     public int Version => 1;
-
     public bool ShouldSave => _itemManager != null;
 
     public void BeforeSave()
     {
-        // yêu cầu chuẩn bị dữ liệu trước khi save (nếu cần)
+        // Prepare data before save if needed.
     }
 
     public object Capture()
@@ -42,6 +39,5 @@ public class ItemSaveAdapter : ISaveable, IInject<ItemManager>
     public void AfterLoad()
     {
         _itemManager.AfterApplySaveData();
-        // thông báo đến các module khác 'data đã sẳn sàng' (nếu cần)
     }
 }

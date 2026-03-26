@@ -1,14 +1,7 @@
-﻿using Save.Abstractions;
-
-namespace Account
-{
+using ViT.SaveKit.Abstractions;
     /// <summary>
-    /// Account context đơn giản: cung cấp UserId.
+    /// Account context that exposes the current save user id.
     /// </summary>
-    /// <remarks>
-    /// - Module khác có thể set UserId sau login.
-    /// - SaveSystem chỉ phụ thuộc interface IAccountContext.
-    /// </remarks>
     public sealed class AccountContext : IAccountContext
     {
         public string UserId { get; private set; }
@@ -18,12 +11,8 @@ namespace Account
             UserId = userId;
         }
 
-        /// <summary>
-        /// Update userId khi user đổi account.
-        /// </summary>
         public void SetUserId(string userId)
         {
             UserId = userId;
         }
     }
-}

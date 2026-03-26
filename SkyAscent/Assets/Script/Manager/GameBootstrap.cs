@@ -1,79 +1,126 @@
-﻿using UnityEngine;
-using Save.Core;
-using Account;
-using Save.IO;
-//using Progress.Save;
-
+using Unity.VisualScripting;
+using UnityEngine;
+using ViT.SaveKit.Runtime;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 /// <summary>
-/// logic khi khởi động game
+/// Logic khi khởi động game
 /// </summary>
 [DefaultExecutionOrder(-1000)]
-public class GameBootstrap : MonoBehaviour
+public partial class GameBootstrap : MonoBehaviour
 {
-    ISaveSystem _saveSystem;
+    private ISaveSystem _saveSystem;
 
-    //[SerializeField] GameBootstrap _gameBootstrap;
-    [SerializeField] Core _core;
+    [SerializeField] private Core core;
 
-    [Header("------Manager----------------------------------")]
-    [SerializeField] ProgressManager _progressManager;
-    [SerializeField] ChapterManager _chapterManager;
-    [SerializeField] CameraManager _cameraManager;
-    [SerializeField] SpawnManager _spawnManager;
-    [SerializeField] ItemManager _itemManager;
-    [SerializeField] SoundManager _soundManager;
+    [Header("------Manager----------------------------------")] [SerializeField]
+    private ProgressManager progressManager;
+    [SerializeField] private ChapterManager chapterManager;
+    [SerializeField] private CameraManager cameraManager;
+    [SerializeField] private SpawnManager spawnManager;
+    [SerializeField] private ItemManager itemManager;
+    [SerializeField] private SoundManager soundManager;
 
-    [Header("------Controller----------------------------------")]
-    [SerializeField] ChapterController _chapterController;
-    [SerializeField] SessionController _sessionController;
-    [SerializeField] ShipController _shipController;
-    [Header("------Input----------------------------------")]
-    [SerializeField] DragInput _dragInput;
+    [Header("------Controller----------------------------------")] [SerializeField]
+    private ChapterController chapterController;
+    [SerializeField] private SessionController sessionController;
+    [SerializeField] private ShipController shipController;
 
-    #region Unity lifecycle
+    [Header("------Input----------------------------------")] [SerializeField]
+    DragInput dragInput;
+
 
     private void Awake()
     {
         ResolveSceneReferences();
-        RegistorGlobalDI();
+        RegisterGlobalDi();
 
         BuildSaveSystem();
     }
-
-    /// <summary>
-    /// rào save khi pause ứng dụng
-    /// </summary>
-    /// <param name="pause"></param>
+    
     private void OnApplicationPause(bool pause)
     {
         if (pause) _saveSystem?.SaveAll();
     }
-
-    /// <summary>
-    /// rào lưu khi thoát ứng dụng
-    /// </summary>
+    
     private void OnApplicationQuit()
     {
         _saveSystem?.SaveAll();
     }
 
-    #endregion
+}
 
-    #region Public API
+// Logic
+public partial class GameBootstrap
+{
+    #region DI
 
-    public void RegistorGlobalDI()
+    /// <summary>
+    /// Đăng ký vào DI container global
+    /// </summary>
+    private void ResolveSceneReferences()
     {
-        RegistorGlobalDIContainer();
+        shipController ??= FindFirstObjectByType<ShipController>();
+        soundManager ??= FindFirstObjectByType<SoundManager>();
     }
 
     /// <summary>
-    ///save ngay.
+    /// Đăng ký vào DI container global
     /// </summary>
+    private void RegisterGlobalDiContainer()
+    {
+        //Injector.GlobalServices.Set<ISaveSystem>(_saveSystem);
+
+        //Injector.GlobalServices.Set(_gameBootstrap);
+        Injector.GlobalServices.Set(core);
+
+        Injector.GlobalServices.Set(progressManager);
+        Injector.GlobalServices.Set(chapterManager);
+        Injector.GlobalServices.Set(cameraManager);
+        Injector.GlobalServices.Set(spawnManager);
+        Injector.GlobalServices.Set(itemManager);
+        if (soundManager.IsUnityNull())
+            Injector.GlobalServices.Set(soundManager);
+
+        Injector.GlobalServices.Set(chapterController);
+        Injector.GlobalServices.Set(sessionController);
+
+        Injector.GlobalServices.Set(dragInput);
+
+        Injector.GlobalServices.Set<IProgressQuery>(progressManager);
+        Injector.GlobalServices.Set<IChapterQuery>(chapterManager);
+
+        Injector.GlobalServices.Set<ISolarObjectFactory>(new AddressablesSolarObjectFactory());
+    }
+    #endregion
+
+    #region Save
+
+    /// <summary>
+    /// Build SaveSystem và register tất cả adapter/module cần save.
+    /// </summary>
+    private void BuildSaveSystem()
+    {
+        _saveSystem = SaveKitFactory.CreateLocalJson(Application.persistentDataPath,
+            new ProgressSaveAdapter(progressManager),
+            new ItemSaveAdapter(itemManager),
+            new PlayerStatSaveAdapter(shipController));
+    }
+    
+    #endregion
+}
+
+// API
+public partial class GameBootstrap
+{
+    public void RegisterGlobalDi()
+    {
+        RegisterGlobalDiContainer();
+    }
+    
     public void SaveNow()
     {
         try
@@ -82,10 +129,8 @@ public class GameBootstrap : MonoBehaviour
         }
         catch (System.Exception)
         {
-
             throw;
         }
-
     }
 
     public void LoadNow()
@@ -96,89 +141,10 @@ public class GameBootstrap : MonoBehaviour
         }
         catch (System.Exception)
         {
-
             throw;
         }
-
     }
-
-    #endregion
-
-    #region Logic
-
-    /// <summary>
-    /// Đăng ký vào DI container global
-    /// </summary>
-    private void ResolveSceneReferences()
-    {
-        _shipController ??= FindFirstObjectByType<ShipController>();
-        _soundManager ??= FindFirstObjectByType<SoundManager>();
-    }
-
-    /// <summary>
-    /// Đăng ký vào DI container global
-    /// </summary>
-    private void RegistorGlobalDIContainer()
-    {
-        //Injector.GlobalServices.Set<ISaveSystem>(_saveSystem);
-
-        //Injector.GlobalServices.Set(_gameBootstrap);
-        Injector.GlobalServices.Set(_core);
-
-        Injector.GlobalServices.Set(_progressManager);
-        Injector.GlobalServices.Set(_chapterManager);
-        Injector.GlobalServices.Set(_cameraManager);
-        Injector.GlobalServices.Set(_spawnManager);
-        Injector.GlobalServices.Set(_itemManager);
-        if (_soundManager != null)
-            Injector.GlobalServices.Set(_soundManager);
-
-        Injector.GlobalServices.Set(_chapterController);
-        Injector.GlobalServices.Set(_sessionController);
-
-        Injector.GlobalServices.Set(_dragInput);
-
-        Injector.GlobalServices.Set<IProgressQuery>(_progressManager);
-        Injector.GlobalServices.Set<IChapterQuery>(_chapterManager);
-
-        Injector.GlobalServices.Set<ISolarObjectFactory>(new AddressablesSolarObjectFactory());
-
-    }
-
-    /// <summary>
-    /// Đăng ký tất cả adapter/module cần save vào SaveSystem
-    /// </summary>
-    private void RegistorAdapterSaveable()
-    {
-        _saveSystem.Register(new ProgressSaveAdapter(_progressManager));
-        _saveSystem.Register(new ItemSaveAdapter(_itemManager));
-
-        if (_shipController != null)
-        {
-            _saveSystem.Register(new PlayerStatSaveAdapter(_shipController));
-        }
-    }
-
-    /// <summary>
-    /// Build SaveSystem và register tất cả adapter/module cần save.
-    /// </summary>
-    private void BuildSaveSystem()
-    {
-        // build core save deps (POCO) (cần fix)
-        var account = new AccountContext("guest_001");
-
-        IFolderProvider folders = new FolderProvider(Application.persistentDataPath);
-        IFileHandler files = new JsonFileHandlerNewtonsoft();
-        ISaveStore store = new LocalJsonSaveStore(folders, files);
-
-        // build SaveSystem
-        _saveSystem = new SaveSystem(account, store);
-
-        RegistorAdapterSaveable();
-    }
-
-    #endregion
-
+    
 }
 
 #if UNITY_EDITOR
@@ -200,7 +166,7 @@ public class GameBootstrapEditor : Editor
         {
             if (GUILayout.Button("Register Global DI (Editor)"))
             {
-                _target.RegistorGlobalDI();
+                _target.RegisterGlobalDi();
                 EditorUtility.SetDirty(_target);
             }
         }

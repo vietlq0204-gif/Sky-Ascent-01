@@ -1,5 +1,4 @@
-﻿using Save.Core;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -21,9 +20,6 @@ public enum DelayType
 
 [RequireComponent(typeof(StateManager))]
 [DefaultExecutionOrder(-500)]
-/// <summary>
-/// Truy cập các State tại đây
-/// </summary>
 public class Core : CoreEventBase, ICoreContext, IInject<GameBootstrap>
 {
     [SerializeField] private GameBootstrap _gameBootstrap;
@@ -386,4 +382,3 @@ public class Core : CoreEventBase, ICoreContext, IInject<GameBootstrap>
 
     #endregion
 }
-

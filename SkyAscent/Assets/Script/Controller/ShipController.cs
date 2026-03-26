@@ -465,7 +465,7 @@ public sealed class PlayerStatSaveData
     public int MaxHealth = ShipController.DefaultMaxHealth;
 }
 
-public sealed class PlayerStatSaveAdapter : Save.Abstractions.ISaveable, IInject<ShipController>
+public sealed class PlayerStatSaveAdapter : ViT.SaveKit.Abstractions.ISaveable, IInject<ShipController>
 {
     private ShipController _shipController;
 
