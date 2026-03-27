@@ -298,12 +298,13 @@
       "url": "https://packages.unity.com"
     },
     "com.vit.savekit": {
-      "version": "file:com.vit.savekit",
+      "version": "https://github.com/vietlq0204-gif/com.vit.savekit.git",
       "depth": 0,
-      "source": "embedded",
+      "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.2.2"
-      }
+      },
+      "hash": "ae6e3e9adb629f9e89eb50707e92633e8b288334"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
